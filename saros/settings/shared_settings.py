@@ -40,7 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user',
+    'django.contrib.sites',
+
+    # third-party apps 
+    'crispy_forms',
+    'allauth', 
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # local apps 
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +152,26 @@ MEDIA_ROOT = BASE_DIR/'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AUTHNTICATION CONFIGS 
+AUTH_USER_MODEL = 'users.User'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+# allauth configs 
+SITE_ID = 1
+ACCOUNT_UNIQUE_EMAIL = True 
+ACCOUNT_EMAIL_REQUIRED = True 
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_VERIFICATION = True 
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+
+ACCOUNT_USERNAME_REQUIRED = True 
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
+
+# EMAIL configs
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

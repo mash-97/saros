@@ -1,10 +1,10 @@
 from django.urls import path
 from django.urls.resolvers import URLPattern 
 
-from user.views import *
+from users.views import *
 
 
-app_name="user"
+app_name="users"
 urlpatterns = [ 
     path('test/', test, name="test"),
 ]
