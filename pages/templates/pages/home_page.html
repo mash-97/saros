@@ -1,5 +1,10 @@
 {% extends 'base.html' %} 
 {% block title %}Saros{% endblock title %}
 {% block content %} 
-Hello From Saros! 
+<h2>Hello From Saros! </h2>
+{% if debug %}
+<h3>Debug is on!</h3>
+{% else %} 
+<h3>Debug is off!</h3>
+{% endif %}
 {% endblock content %}

@@ -1,7 +1,5 @@
 from saros.settings.shared_settings import *
 
-DEBUG = False 
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
