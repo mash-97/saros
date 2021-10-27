@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}{% trans "Signup" %}{% endblock title %}
+
+
+{% block content %}
+<div class="container-fluid mt-5">
+
+
+  <h3 class="h3" id="head_banner">{% trans "Sign Up" %}</h3>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          {{form.username|add_class:"form-control form-control-alternative text-dark"}}
+        </div> 
+        {% for e in form.username.errors %} 
+        <p class="text-muted text-danger">{{e}}</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          {{form.email|add_class:"form-control form-control-alternative text-dark"}}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          {{form.password1|add_class:"form-control form-control-alternative text-dark"}}
+        </div>
+        {% for e in form.password1.errors %} 
+        <p class="text-muted text-danger">{{e}}</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          {{form.password2|add_class:"form-control form-control-alternative text-dark"}}
+        </div>
+        {% for e in form.password2.errors %} 
+        <p class="text-muted text-danger">{{e}}</p>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <button class="btn btn-outline-primary btn-lg" type="submit">{% trans "Sign Up" %}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <p class="exist_account_info">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+</div>
+{% endblock %}

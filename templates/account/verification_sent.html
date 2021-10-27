@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Verify Your E-mail Address" %}{% endblock title %}
+
+{% block content %}
+<div class="mt-3">
+    <h3 class="h3" id="head_banner">{% trans "Verify Your E-mail Address" %}</h3>
+
+    <p id="verification_sent_info">{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Or wait for the admin to confirm manually for you!{% endblocktrans %}</p>
+</div>
+{% endblock content %}

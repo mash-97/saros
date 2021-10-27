@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}{% trans "Signup" %}{% endblock title %}
+
+
+{% block content %}
+<div class="container-fluid mt-5">
+
+
+  <h3 class="h3" id="head_banner">{% trans "Login" %}</h3>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          {{form.login|add_class:"form-control form-control-alternative text-dark"}}
+        </div> 
+        {% for e in form.login.errors %} 
+        <p class="text-muted text-danger">{{e}}</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          {{form.password|add_class:"form-control form-control-alternative text-dark"}}
+        </div>
+        {% for e in form.password.errors %} 
+        <p class="text-muted text-danger">{{e}}</p>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <button class="btn btn-outline-primary btn-lg" type="submit">{% trans "Login" %}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <p class="exist_account_info">Forgot Password? Then you can <a href="{% url 'account_reset_password' %}">Reset Password?</a>.</p>
+
+</div>
+{% endblock %}

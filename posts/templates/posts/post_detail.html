@@ -3,6 +3,8 @@
 
 {% block content %} 
 <div> 
-    {{post.text|safe}}
+    <h1 class="text-center">{{post.title|capfirst}}</h1>
+    <p class="text-center text-muted">{{post.user.username}}: {{post.created_at}}</p>
+    <div class="mt-5">{{post.text|safe}}</div>
 </div>
 {% endblock content %}

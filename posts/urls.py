@@ -4,7 +4,7 @@ from posts.views import *
 
 app_name = "posts"
 urlpatterns = [ 
-    path('', PostList.as_view(), name="post_list"),
+    path('', PostList.as_view(), name="posts"),
     path('create-post', PostCreate.as_view(), name="create_post"),
-    path('<slug:slug>', PostDetail.as_view(), name="post_detail"),
+    path('<str:username>/<slug:slug>', PostDetail.as_view(), name="post_detail"),
 ]
