@@ -8,6 +8,8 @@ django = "*"
 pyyaml = "*"
 django-allauth = "*"
 django-crispy-forms = "*"
+django-summernote = "*"
+django-widget-tweaks = "*"
 
 [dev-packages]
 

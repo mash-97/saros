@@ -47,9 +47,15 @@ INSTALLED_APPS = [
     'allauth', 
     'allauth.account',
     'allauth.socialaccount',
+    'django_summernote',
+    'widget_tweaks',
 
     # local apps 
+    'saros',
     'users',
+    'pages',
+    'posts',
+    'comments',
 ]
 
 MIDDLEWARE = [
@@ -130,12 +136,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/statics/'
 
 # for collectstatic management purpose
 STATIC_ROOT = BASE_DIR/'staticfiles'
 
-STATICFILES_DIRS = [BASE_DIR/'static']
+STATICFILES_DIRS = [BASE_DIR/'statics']
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -175,3 +181,6 @@ AUTHENTICATION_BACKENDS = (
 
 # EMAIL configs
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Summernote 
+SUMMERNOTE_THEME = 'bs4'
