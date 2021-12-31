@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'pages',
     'posts',
     'comments',
+    'aps',
 ]
 
 MIDDLEWARE = [

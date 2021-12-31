@@ -1,0 +1,8 @@
+{% load crispy_forms_tags %}
+<a href="{% url 'aps:list' %}">See APS List</a>
+<form method="POST">
+    {% csrf_token %} 
+    {{form | crispy}}
+    <button type="submit">Create</button>
+</form>
+

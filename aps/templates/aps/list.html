@@ -1,0 +1,16 @@
+<a style="position: fixed;" href="{% url 'aps:create' %}">Create New APS</a>
+{% for aps in apss %}
+<div style="text-align: center" {% if aps.id == tab_index_id %}tabindex="0"{% endif %}>
+
+    <h3>{{aps.id}}</h5>
+    <h3>{{aps.timestamp}}</h3>
+    <h3>{{aps.description}}</h4>
+    <h5 style="color: {% if aps.active %}green{% else %}red{% endif %}">Status: {{aps.active}}</h5>
+    <form method="POST">
+        {% csrf_token %} 
+        <input hidden name="aps_id" value="{{aps.id}}">
+        <button type="submit">Update Status</button>
+    </form>
+</div>
+<hr>
+{% endfor %}
