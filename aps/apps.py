@@ -8,3 +8,4 @@ class ApsConfig(AppConfig):
     def ready(self):
         # from aps import background_jobs 
         # background_jobs.start()
+        pass 
