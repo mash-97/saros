@@ -6,5 +6,5 @@ class ApsConfig(AppConfig):
     name = 'aps'
 
     def ready(self):
-        from aps import background_jobs 
-        background_jobs.start()
+        # from aps import background_jobs 
+        # background_jobs.start()
